@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Categorias";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@*@/@foreach(string cat in ViewBag.ListaCategorias)
+{
+    //Formas de carregar a lista na página categorias
+
+    //<p>@cat</p>
+    
+    //@Html.ActionLink(@cat, "Index", "Categorias")
+    //@:|
+
+    //<a href="#">@cat</a>
+}
+ *@
+
+@foreach(var cat in Model)
+{
+    <dl>
+        <dt>@cat.Nome</dt>
+        @if (!string.IsNullOrEmpty(cat.Descricao))
+        {
+            <dd>@cat.Descricao</dd>
+        }
+        else
+        {
+            <dd>
+                
+            </dd>
+        }
+    </dl>
+    
+    
+    
+}
